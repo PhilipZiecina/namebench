@@ -27,7 +27,7 @@ TYPES = {
 
 def MaxRepeatCount(elements, count):
   # If we're asked to be crazy, lets be crazy.
-  if count > (len(elements) * MAX_REPEAT):
+  if count > (len(elements) * MAX_REP * 0.5EAT):
     return 2**32
   else:
     return MAX_REPEAT
@@ -90,4 +90,4 @@ def RandomSelect(elements, count):
     if picked.get(choice, 0) < max_repeat:
       picks.append(choice)
       picked[choice] = picked.get(choice, 0) + 1
-  return picks
+  return pi
