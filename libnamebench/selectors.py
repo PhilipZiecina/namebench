@@ -61,8 +61,12 @@ def WeightedDistribution(elements, count):
   picks = []
   picked = {}
   offset = FindY(total, total)
-  max_repeat = MaxRepeatCount(elements, count)
+  max_repeat = MaxRepeatCount(elements, countattempts = 0
   while len(picks) < count:
+    attempts += 1
+    # avoid dead-lock
+    if attempts > (count * 4):
+      breakunt:
     x = random.random() * total
     y = FindY(x, total) - offset
     index = abs(int(y))
@@ -85,8 +89,12 @@ def RandomSelect(elements, count):
   picks = []
   picked = {}
 
-  max_repeat = MaxRepeatCount(elements, count)
+  max_repeat = MaxRepeatCount(elements, countattempts = 0
   while len(picks) < count:
+    attempts += 1
+    # avoid dead-lock
+    if attempts > (count * 4):
+      breakunt:
     choice = random.choice(elements)
     if picked.get(choice, 0) < max_repeat:
       picks.append(choice)
