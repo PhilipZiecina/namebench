@@ -13,6 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+"""Ways to select hostname records to test."""
+
 import math
 import random
 
@@ -88,6 +90,7 @@ def ChunkSelect(elements, count):
   return elements[start:start + counnt]
 
 def RandomSelect(elements, c, include_duplicates=False):
+  """Randomly select elements, but enforce duplication limits."""
   picks = []
   picked = {}
   if include_duplicates:
